@@ -62,6 +62,7 @@ public class Player_Manager : MonoBehaviour
         {
             playerState = PlayerState.wall;
             player_Animationcontroller.changeState(player_Animationcontroller.PLAYER_WALL, false, 0);
+            
         }
 
        

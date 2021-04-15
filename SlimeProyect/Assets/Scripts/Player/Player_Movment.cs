@@ -49,6 +49,10 @@ public class Player_Movment : MonoBehaviour
                 WallLeft = true;
                 WallRight = false;
                 player_Manager.rb2D.gravityScale = 0.5f;
+                if (m_FacingRight)
+                {
+                    Flip();
+                }
                 // set animator wall left
 
             }
@@ -59,6 +63,10 @@ public class Player_Movment : MonoBehaviour
                 WallLeft = false;
                 WallRight = true;
                 player_Manager.rb2D.gravityScale = 0.5f;
+                if (!m_FacingRight)
+                {
+                    Flip();
+                }
                 // set animator wall right
 
             }
@@ -70,6 +78,7 @@ public class Player_Movment : MonoBehaviour
             player_Manager.rb2D.gravityScale = 5f;
             WallLeft = false;
             WallRight = false;
+         
 
         }
       
@@ -115,6 +124,15 @@ public class Player_Movment : MonoBehaviour
             
         }
 
+        if (isJumping)
+        {
+            if (RoofCheck())
+            {
+                isJumping = false;
+                jumpboostTimer = 0;
+            }
+        }
+
        
 
         
@@ -141,6 +159,10 @@ public class Player_Movment : MonoBehaviour
         {
             Flip();
         }
+
+
+   
+        
 
         //Jump
 
@@ -172,16 +194,18 @@ public class Player_Movment : MonoBehaviour
         {
             WallJumpLeft = true;
             Invoke("EndWallJump",  0.5f);
+            Flip();
             isJumping = true;
-            player_Manager.rb2D.velocity = new Vector2(JumpForce * 2, JumpForce/ 1.2f);
+            player_Manager.rb2D.velocity = new Vector2(JumpForce, JumpForce* 1.2f);
         }
 
         if (WallRight && move < 0 && jump && !isGrounded && !player_Manager.player_Input.isRightpressed)
         {
             WallJumpRight = true;
             Invoke("EndWallJump", 0.5f);
+            Flip();
             isJumping = true;
-            player_Manager.rb2D.velocity = new Vector2(-JumpForce * 2 , JumpForce/ 1.2f);
+            player_Manager.rb2D.velocity = new Vector2(-JumpForce , JumpForce * 1.2f);
         }
 
     }
@@ -201,9 +225,9 @@ public class Player_Movment : MonoBehaviour
 
     public bool GroundCheck()
     {
-        float ExtraHeightTest = 0.1f;
+        float ExtraHeightTest = 1.1f;
             
-        RaycastHit2D raycastHit2D = Physics2D.BoxCast(player_Manager.myBoxCollider.bounds.center, player_Manager.myBoxCollider.bounds.size - new Vector3 (0.5f, 0) , 0f, Vector2.down, ExtraHeightTest, platformLayerMask);
+        RaycastHit2D raycastHit2D = Physics2D.BoxCast(player_Manager.myBoxCollider.bounds.center, player_Manager.myBoxCollider.bounds.size - new Vector3 (0.5f, 1) , 0f, Vector2.down, ExtraHeightTest, platformLayerMask);
         Color rayColor;
         if (raycastHit2D.collider != null)
         {
@@ -214,9 +238,9 @@ public class Player_Movment : MonoBehaviour
             rayColor = Color.red;
         }
 
-        Debug.DrawRay(player_Manager.myBoxCollider.bounds.center + new Vector3(player_Manager.myBoxCollider.bounds.extents.x, 0), Vector2.down * (player_Manager.myBoxCollider.bounds.extents.y + ExtraHeightTest), rayColor);
-        Debug.DrawRay(player_Manager.myBoxCollider.bounds.center - new Vector3(player_Manager.myBoxCollider.bounds.extents.x, 0), Vector2.down * (player_Manager.myBoxCollider.bounds.extents.y + ExtraHeightTest), rayColor);
-        Debug.DrawRay(player_Manager.myBoxCollider.bounds.center - new Vector3(player_Manager.myBoxCollider.bounds.extents.x, player_Manager.myBoxCollider.bounds.extents.y + ExtraHeightTest), Vector2.right * (player_Manager.myBoxCollider.bounds.extents.x), rayColor);
+        Debug.DrawRay((player_Manager.myBoxCollider.bounds.center + new Vector3(0, 1)) + new Vector3(player_Manager.myBoxCollider.bounds.extents.x, 0), Vector2.down * (player_Manager.myBoxCollider.bounds.extents.y + ExtraHeightTest), rayColor);
+        Debug.DrawRay((player_Manager.myBoxCollider.bounds.center + new Vector3(0, 1)) - new Vector3(player_Manager.myBoxCollider.bounds.extents.x, 0), Vector2.down * (player_Manager.myBoxCollider.bounds.extents.y + ExtraHeightTest), rayColor);
+        Debug.DrawRay((player_Manager.myBoxCollider.bounds.center + new Vector3(0, 1)) - new Vector3(player_Manager.myBoxCollider.bounds.extents.x, player_Manager.myBoxCollider.bounds.extents.y + ExtraHeightTest), Vector2.right * (player_Manager.myBoxCollider.bounds.extents.x * 2), rayColor);
 
 
 
@@ -225,9 +249,9 @@ public class Player_Movment : MonoBehaviour
 
     private bool WallCheck(out int WallDirection)
     {
-        float ExtraDistanceTest = 0.1f;
-        RaycastHit2D raycastHit2DLeft = Physics2D.BoxCast(player_Manager.myBoxCollider.bounds.center, player_Manager.myBoxCollider.bounds.size - new Vector3(0, 0.5f), 0f, Vector2.left, ExtraDistanceTest, platformLayerMask);
-        RaycastHit2D raycastHit2DRight = Physics2D.BoxCast(player_Manager.myBoxCollider.bounds.center, player_Manager.myBoxCollider.bounds.size - new Vector3(0, 0.5f), 0f, Vector2.right, ExtraDistanceTest, platformLayerMask);
+        float ExtraDistanceTest = 1.1f;
+        RaycastHit2D raycastHit2DLeft = Physics2D.BoxCast(player_Manager.myBoxCollider.bounds.center, player_Manager.myBoxCollider.bounds.size - new Vector3(1, 0), 0f, Vector2.left, ExtraDistanceTest, platformLayerMask);
+        RaycastHit2D raycastHit2DRight = Physics2D.BoxCast(player_Manager.myBoxCollider.bounds.center, player_Manager.myBoxCollider.bounds.size - new Vector3(1, 0), 0f, Vector2.right, ExtraDistanceTest, platformLayerMask);
         if (raycastHit2DLeft.collider != null)
         {
             WallDirection = 1; //Left
@@ -243,6 +267,15 @@ public class Player_Movment : MonoBehaviour
             return false;
         }
         
+    }
+
+    private bool RoofCheck()
+    {
+        float ExtraDistanceTest = 1.1f;
+        RaycastHit2D raycastHit2D = Physics2D.BoxCast(player_Manager.myBoxCollider.bounds.center, player_Manager.myBoxCollider.bounds.size - new Vector3(0.5f, 1f), 0f, Vector2.up, ExtraDistanceTest, platformLayerMask);
+        
+        return raycastHit2D.collider != null;
+
     }
 
     private void PlayerLanding()
