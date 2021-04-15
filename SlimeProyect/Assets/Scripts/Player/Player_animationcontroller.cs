@@ -17,6 +17,7 @@ public class Player_animationcontroller : MonoBehaviour
     public string PLAYER_JUMP = "Player_Jump";
     public string PLAYER_FALL = "Player_JumpToFall";
     public string PLAYER_LAND = "Player_Land";
+    public string PLAYER_WALL = "Player_Wall";
 
 
     public void changeState(string StateChange, bool AnimationWait, float WaitTime)

@@ -28,19 +28,55 @@ public class Player_Input : MonoBehaviour
             isLeftpressed = false;
             
         }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            player_Manager.player_Movment.MoveCharacter(0, true);
-        }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (!player_Manager.player_Movment.WallRight && !player_Manager.player_Movment.WallLeft)
         {
-            player_Manager.player_Movment.MoveCharacter(0, true);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                player_Manager.player_Movment.MoveCharacter(0, true);
+            }
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                player_Manager.player_Movment.MoveCharacter(0, true);
+            }
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                player_Manager.player_Movment.isJumping = false;
+            }
         }
-        if (Input.GetKeyUp(KeyCode.Space))
+        else
         {
-            player_Manager.player_Movment.isJumping = false;
+           if (player_Manager.player_Movment.WallRight)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    player_Manager.player_Movment.MoveCharacter(-1, true);
+                }
+
+                
+                if (Input.GetKeyUp(KeyCode.Space))
+                {
+                    player_Manager.player_Movment.isJumping = false;
+                }
+            }
+            
+            else if (player_Manager.player_Movment.WallLeft)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    player_Manager.player_Movment.MoveCharacter(1, true);
+                }
+
+                
+                if (Input.GetKeyUp(KeyCode.Space))
+                {
+                    player_Manager.player_Movment.isJumping = false;
+                }
+            }
+
         }
+       
 
 
     }

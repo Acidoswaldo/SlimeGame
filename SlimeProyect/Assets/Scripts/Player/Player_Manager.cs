@@ -8,7 +8,7 @@ public class Player_Manager : MonoBehaviour
     [SerializeField] internal Player_Input player_Input;
     [SerializeField] internal Player_Movment player_Movment;
     [SerializeField] internal Player_animationcontroller player_Animationcontroller;
-     public enum PlayerState {Idle, Run, Attack, jump, fall, land}
+     public enum PlayerState {Idle, Run, Attack, jump, fall, land, wall}
     public PlayerState playerState;
 
 
@@ -48,15 +48,20 @@ public class Player_Manager : MonoBehaviour
 
             }
         }
-        else if (!player_Movment.isGrounded && player_Movment.isJumping)
+        else if (!player_Movment.isGrounded && player_Movment.isJumping && !player_Movment.WallLeft && !player_Movment.WallRight)
         {
             playerState = PlayerState.jump;
-            player_Animationcontroller.changeState(player_Animationcontroller.PLAYER_JUMP, false, 0);
+            player_Animationcontroller.changeState(player_Animationcontroller.PLAYER_JUMP, false, 0 );
         }
-        else if (!player_Movment.isGrounded && !player_Movment.isJumping && !player_Movment.isLanding)
+        else if (!player_Movment.isGrounded && !player_Movment.isJumping && !player_Movment.isLanding && !player_Movment.WallLeft && !player_Movment.WallRight)
         {
             playerState = PlayerState.fall;
             player_Animationcontroller.changeState(player_Animationcontroller.PLAYER_FALL, true, 0.2f);
+        }
+        else if ((player_Movment.WallLeft || player_Movment.WallRight) && !player_Movment.isJumping)
+        {
+            playerState = PlayerState.wall;
+            player_Animationcontroller.changeState(player_Animationcontroller.PLAYER_WALL, false, 0);
         }
 
        
