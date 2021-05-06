@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_animationcontroller : MonoBehaviour
+public class Player_animationcontroller2 : MonoBehaviour
 {
 
-    [SerializeField] internal Player_Manager player_Manager;
+    [SerializeField] internal Player_Manager2 player_Manager;
     [SerializeField] internal Animator animator;
 
     private string currentState;

@@ -1,45 +1,45 @@
 fileFormatVersion: 2
-guid: 16563e506eeed46ccb607b6fe4bd8c73
+guid: 64e5b7d24b6044d23852ffa615c4e8f7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3317995069926533962
-    second: SlimeFall_0
+      213: 7947501097736902746
+    second: SlimeJump_0
   - first:
-      213: -4861796743595808640
-    second: SlimeFall_1
+      213: -6168118176287722935
+    second: SlimeJump_1
   - first:
-      213: 2557123411915932519
-    second: SlimeFall_2
+      213: 7316173638452284389
+    second: SlimeJump_2
   - first:
-      213: -4930171507919213580
-    second: SlimeFall_3
+      213: 1281434879442400858
+    second: SlimeJump_3
   - first:
-      213: 7232437871414968931
-    second: SlimeFall_4
+      213: 2488514948864383014
+    second: SlimeJump_4
   - first:
-      213: -300035282451552097
-    second: SlimeFall_5
+      213: 4271780655302208723
+    second: SlimeJump_5
   - first:
-      213: -6432777779988485006
-    second: SlimeFall_6
+      213: 6116754092713097149
+    second: SlimeJump_6
   - first:
-      213: 7859739653116228350
-    second: SlimeFall_7
+      213: 4760488116922395201
+    second: SlimeJump_7
   - first:
-      213: 3388668556542035861
-    second: SlimeFall_8
+      213: -7299356185989060789
+    second: SlimeJump_8
   - first:
-      213: -8481873545141571750
-    second: SlimeFall_9
+      213: 5137619143157061654
+    second: SlimeJump_9
   - first:
-      213: -4013041765235658999
-    second: SlimeFall_10
+      213: 2121689564443424230
+    second: SlimeJump_10
   - first:
-      213: 4152776329985712933
-    second: SlimeFall_11
+      213: -565547280096343059
+    second: SlimeJump_11
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -93,6 +93,7 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -146,7 +147,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SlimeFall_0
+      name: SlimeJump_0
       rect:
         serializedVersion: 2
         x: 0
@@ -160,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4be775cfe2eb0e20800000000000000
-      internalID: 3317995069926533962
+      spriteID: a5892a604223b4e60800000000000000
+      internalID: 7947501097736902746
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeFall_1
+      name: SlimeJump_1
       rect:
         serializedVersion: 2
         x: 1000
@@ -181,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08822dfde9d678cb0800000000000000
-      internalID: -4861796743595808640
+      spriteID: 9427db1e231766aa0800000000000000
+      internalID: -6168118176287722935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeFall_2
+      name: SlimeJump_2
       rect:
         serializedVersion: 2
         x: 2000
@@ -202,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7638516e13abc7320800000000000000
-      internalID: 2557123411915932519
+      spriteID: 5eb86035925488560800000000000000
+      internalID: 7316173638452284389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeFall_3
+      name: SlimeJump_3
       rect:
         serializedVersion: 2
         x: 0
@@ -223,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fb29bc7223849bb0800000000000000
-      internalID: -4930171507919213580
+      spriteID: a56b5f7cb3298c110800000000000000
+      internalID: 1281434879442400858
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeFall_4
+      name: SlimeJump_4
       rect:
         serializedVersion: 2
         x: 1000
@@ -244,14 +245,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36285c9cce7ce5460800000000000000
-      internalID: 7232437871414968931
+      spriteID: 6289f49492bf88220800000000000000
+      internalID: 2488514948864383014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeFall_5
+      name: SlimeJump_5
       rect:
         serializedVersion: 2
         x: 2000
@@ -265,14 +266,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f982461108f06dbf0800000000000000
-      internalID: -300035282451552097
+      spriteID: 3dc6ca58fd9684b30800000000000000
+      internalID: 4271780655302208723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeFall_6
+      name: SlimeJump_6
       rect:
         serializedVersion: 2
         x: 0
@@ -286,14 +287,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27ca2c001be2ab6a0800000000000000
-      internalID: -6432777779988485006
+      spriteID: db7b49a707313e450800000000000000
+      internalID: 6116754092713097149
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeFall_7
+      name: SlimeJump_7
       rect:
         serializedVersion: 2
         x: 1000
@@ -307,14 +308,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef27b036297631d60800000000000000
-      internalID: 7859739653116228350
+      spriteID: 14aa0ae58b6a01240800000000000000
+      internalID: 4760488116922395201
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeFall_8
+      name: SlimeJump_8
       rect:
         serializedVersion: 2
         x: 2000
@@ -328,14 +329,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59749362918f60f20800000000000000
-      internalID: 3388668556542035861
+      spriteID: b476215f83a73ba90800000000000000
+      internalID: -7299356185989060789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeFall_9
+      name: SlimeJump_9
       rect:
         serializedVersion: 2
         x: 0
@@ -349,14 +350,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5fad0813f45a4a80800000000000000
-      internalID: -8481873545141571750
+      spriteID: 6189f13f36d7c4740800000000000000
+      internalID: 5137619143157061654
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeFall_10
+      name: SlimeJump_10
       rect:
         serializedVersion: 2
         x: 1000
@@ -370,14 +371,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90f625ac6cfce48c0800000000000000
-      internalID: -4013041765235658999
+      spriteID: 6e5bd4cea61c17d10800000000000000
+      internalID: 2121689564443424230
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeFall_11
+      name: SlimeJump_11
       rect:
         serializedVersion: 2
         x: 2000
@@ -391,8 +392,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 523e27cd110a1a930800000000000000
-      internalID: 4152776329985712933
+      spriteID: deb4b22ceb5c628f0800000000000000
+      internalID: -565547280096343059
       vertices: []
       indices: 
       edges: []

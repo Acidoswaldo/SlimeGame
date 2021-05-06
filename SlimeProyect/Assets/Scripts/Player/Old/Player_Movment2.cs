@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Movment : MonoBehaviour
+public class Player_Movment2 : MonoBehaviour
 {
-    [SerializeField] internal Player_Manager player_Manager;
+    [SerializeField] internal Player_Manager2 player_Manager;
     [SerializeField] internal float speed = 100;
     [SerializeField] private float JumpForce = 400f;
 
@@ -17,6 +17,8 @@ public class Player_Movment : MonoBehaviour
     private float jumpboostTimer;
     private bool m_FacingRight = true;
 
+   float UpdateGroundTime;
+
     //landing
     private bool WasInTheAir;
     public bool isLanding;
@@ -28,6 +30,7 @@ public class Player_Movment : MonoBehaviour
     public bool canWallJump;
     public bool WallJumpLeft;
     public bool WallJumpRight;
+    float UpdateWallTime;
 
 
 
@@ -38,50 +41,59 @@ public class Player_Movment : MonoBehaviour
     private void FixedUpdate()
     {
 
-        int WallColissionDirection;
-        if (WallCheck(out WallColissionDirection) && !isGrounded && !isJumping && player_Manager.rb2D.velocity.y <= 0)
+        #region Wall Checks
+        if (Time.time - UpdateWallTime >= 0.2f)
         {
-            
-            if (WallColissionDirection == 1) // wall left
+            int WallColissionDirection;
+            if (WallCheck(out WallColissionDirection) && !isGrounded && !isJumping && player_Manager.rb2D.velocity.y <= 0)
             {
-               
 
-                WallLeft = true;
-                WallRight = false;
-                player_Manager.rb2D.gravityScale = 0.5f;
-                if (m_FacingRight)
+                if (WallColissionDirection == 1) // wall left
                 {
-                    Flip();
-                }
-                // set animator wall left
 
+
+                    WallLeft = true;
+                    WallRight = false;
+                    player_Manager.rb2D.gravityScale = 0.5f;
+                    if (m_FacingRight)
+                    {
+                        Flip();
+                    }
+                    // set animator wall left
+
+                }
+                else if (WallColissionDirection == 2) //wall right
+                {
+
+
+                    WallLeft = false;
+                    WallRight = true;
+                    player_Manager.rb2D.gravityScale = 0.5f;
+                    if (!m_FacingRight)
+                    {
+                        Flip();
+                    }
+                    // set animator wall right
+
+                }
             }
-            else if (WallColissionDirection == 2) //wall right
+
+            else
             {
 
-
+                player_Manager.rb2D.gravityScale = 5f;
                 WallLeft = false;
-                WallRight = true;
-                player_Manager.rb2D.gravityScale = 0.5f;
-                if (!m_FacingRight)
-                {
-                    Flip();
-                }
-                // set animator wall right
+                WallRight = false;
+
 
             }
+
+            UpdateWallTime = Time.time;
         }
 
-        else
-        {
-          
-            player_Manager.rb2D.gravityScale = 5f;
-            WallLeft = false;
-            WallRight = false;
-         
+        #endregion
 
-        }
-      
+        #region Movement
         if (player_Manager.player_Input.isRightpressed && isGrounded && !WallRight)
         {
 
@@ -102,27 +114,35 @@ public class Player_Movment : MonoBehaviour
         {
             MoveCharacter(-speed / 2, false);
 
-        } 
-       
+        }
+        #endregion
 
-        if (GroundCheck())
+        #region Ground Check
+        if (Time.time - UpdateGroundTime >= 0.2f)
         {
-            isGrounded = true;
-
-            if (WasInTheAir)
+            if (GroundCheck())
             {
-                isLanding = true;
-                Invoke("PlayerLanding", LandTime);
-                WasInTheAir = false;
-                
+                isGrounded = true;
+
+                if (WasInTheAir)
+                {
+                    isLanding = true;
+                    Invoke("PlayerLanding", LandTime);
+                    WasInTheAir = false;
+
+                }
             }
+            else
+            {
+                WasInTheAir = true;
+                isGrounded = false;
+
+            }
+            UpdateGroundTime = Time.time;
         }
-        else
-        {
-            WasInTheAir = true;
-            isGrounded = false;
-            
-        }
+
+        #endregion
+
 
         if (isJumping)
         {
@@ -190,7 +210,7 @@ public class Player_Movment : MonoBehaviour
             }
         }
 
-        if (WallLeft && move > 0 && jump && !isGrounded && !player_Manager.player_Input.isLeftpressed)
+        if (WallLeft && move > 0 && jump && !isGrounded && !player_Manager.player_Input.isLeftpressed && player_Manager.player_Input.isRightpressed)
         {
             WallJumpLeft = true;
             Invoke("EndWallJump",  0.5f);
@@ -199,7 +219,7 @@ public class Player_Movment : MonoBehaviour
             player_Manager.rb2D.velocity = new Vector2(JumpForce, JumpForce* 1.2f);
         }
 
-        if (WallRight && move < 0 && jump && !isGrounded && !player_Manager.player_Input.isRightpressed)
+        if (WallRight && move < 0 && jump && !isGrounded && !player_Manager.player_Input.isRightpressed && player_Manager.player_Input.isLeftpressed)
         {
             WallJumpRight = true;
             Invoke("EndWallJump", 0.5f);

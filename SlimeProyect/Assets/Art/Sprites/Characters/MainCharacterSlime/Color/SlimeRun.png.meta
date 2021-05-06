@@ -1,45 +1,45 @@
 fileFormatVersion: 2
-guid: 1d8abea84c88e4921b4e0b5cb16b2bff
+guid: 320c9131537e1485c8eff9a0a3018b56
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7532751196803761441
-    second: SlimeLand_0
+      213: -8084539100436385204
+    second: SlimeRun_0
   - first:
-      213: 8752973649960545840
-    second: SlimeLand_1
+      213: -5715903284310888356
+    second: SlimeRun_1
   - first:
-      213: 1958602812957436702
-    second: SlimeLand_2
+      213: -2023520492573773959
+    second: SlimeRun_2
   - first:
-      213: -1813389454968264217
-    second: SlimeLand_3
+      213: -4335550849494761808
+    second: SlimeRun_3
   - first:
-      213: 4264334478563751412
-    second: SlimeLand_4
+      213: 3157408668202378586
+    second: SlimeRun_4
   - first:
-      213: -5997826068843850978
-    second: SlimeLand_5
+      213: 687700413374858534
+    second: SlimeRun_5
   - first:
-      213: 3970871803030827502
-    second: SlimeLand_6
+      213: 8489126174133779130
+    second: SlimeRun_6
   - first:
-      213: 3176226560750827570
-    second: SlimeLand_7
+      213: -153154462938890053
+    second: SlimeRun_7
   - first:
-      213: 6749322213658323790
-    second: SlimeLand_8
+      213: -7275202286324958546
+    second: SlimeRun_8
   - first:
-      213: 4126123395276498483
-    second: SlimeLand_9
+      213: 591634534098258414
+    second: SlimeRun_9
   - first:
-      213: 3615765011269651602
-    second: SlimeLand_10
+      213: 2440922333810706662
+    second: SlimeRun_10
   - first:
-      213: -1257051957241695138
-    second: SlimeLand_11
+      213: -1592091814934815136
+    second: SlimeRun_11
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -93,6 +93,7 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -146,7 +147,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SlimeLand_0
+      name: SlimeRun_0
       rect:
         serializedVersion: 2
         x: 0
@@ -160,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12503e2ad45b98860800000000000000
-      internalID: 7532751196803761441
+      spriteID: c42bbb99582fdcf80800000000000000
+      internalID: -8084539100436385204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeLand_1
+      name: SlimeRun_1
       rect:
         serializedVersion: 2
         x: 1000
@@ -181,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03ea04ec82fc87970800000000000000
-      internalID: 8752973649960545840
+      spriteID: c5039204f380da0b0800000000000000
+      internalID: -5715903284310888356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeLand_2
+      name: SlimeRun_2
       rect:
         serializedVersion: 2
         x: 2000
@@ -202,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1ba86a91ea5e2b10800000000000000
-      internalID: 1958602812957436702
+      spriteID: 97faa6445d20be3e0800000000000000
+      internalID: -2023520492573773959
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeLand_3
+      name: SlimeRun_3
       rect:
         serializedVersion: 2
         x: 0
@@ -223,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e96d2106eb85d6e0800000000000000
-      internalID: -1813389454968264217
+      spriteID: 0beb83e197705d3c0800000000000000
+      internalID: -4335550849494761808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeLand_4
+      name: SlimeRun_4
       rect:
         serializedVersion: 2
         x: 1000
@@ -244,14 +245,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f53e366d95fd2b30800000000000000
-      internalID: 4264334478563751412
+      spriteID: a5521fe747e51db20800000000000000
+      internalID: 3157408668202378586
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeLand_5
+      name: SlimeRun_5
       rect:
         serializedVersion: 2
         x: 2000
@@ -265,14 +266,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e131cfdd7f073cca0800000000000000
-      internalID: -5997826068843850978
+      spriteID: 6250913e1e33b8900800000000000000
+      internalID: 687700413374858534
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeLand_6
+      name: SlimeRun_6
       rect:
         serializedVersion: 2
         x: 0
@@ -286,14 +287,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee17444cdde5b1730800000000000000
-      internalID: 3970871803030827502
+      spriteID: abaf6be274f6fc570800000000000000
+      internalID: 8489126174133779130
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeLand_7
+      name: SlimeRun_7
       rect:
         serializedVersion: 2
         x: 1000
@@ -307,14 +308,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 238b6b78a39341c20800000000000000
-      internalID: 3176226560750827570
+      spriteID: bb003c0d3d2efddf0800000000000000
+      internalID: -153154462938890053
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeLand_8
+      name: SlimeRun_8
       rect:
         serializedVersion: 2
         x: 2000
@@ -328,14 +329,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4be1cb3bc86aad50800000000000000
-      internalID: 6749322213658323790
+      spriteID: eaabd76f01a490b90800000000000000
+      internalID: -7275202286324958546
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeLand_9
+      name: SlimeRun_9
       rect:
         serializedVersion: 2
         x: 0
@@ -349,14 +350,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33662eaed5fe24930800000000000000
-      internalID: 4126123395276498483
+      spriteID: ee9c7c16978e53800800000000000000
+      internalID: 591634534098258414
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeLand_10
+      name: SlimeRun_10
       rect:
         serializedVersion: 2
         x: 1000
@@ -370,14 +371,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29c8300ee17cd2230800000000000000
-      internalID: 3615765011269651602
+      spriteID: 6e8ca171ee5efd120800000000000000
+      internalID: 2440922333810706662
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeLand_11
+      name: SlimeRun_11
       rect:
         serializedVersion: 2
         x: 2000
@@ -391,8 +392,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e543660b7ed0e8ee0800000000000000
-      internalID: -1257051957241695138
+      spriteID: 06ed009fde0c7e9e0800000000000000
+      internalID: -1592091814934815136
       vertices: []
       indices: 
       edges: []

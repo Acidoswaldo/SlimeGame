@@ -1,45 +1,45 @@
 fileFormatVersion: 2
-guid: 64e5b7d24b6044d23852ffa615c4e8f7
+guid: 5cad0e20668c24cc0bbafc45be57e370
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7947501097736902746
-    second: SlimeJump_0
+      213: 4134548387895576566
+    second: Land_0
   - first:
-      213: -6168118176287722935
-    second: SlimeJump_1
+      213: 2555238416136873046
+    second: Land_1
   - first:
-      213: 7316173638452284389
-    second: SlimeJump_2
+      213: 2650256439035795089
+    second: Land_2
   - first:
-      213: 1281434879442400858
-    second: SlimeJump_3
+      213: 1583545000916775290
+    second: Land_3
   - first:
-      213: 2488514948864383014
-    second: SlimeJump_4
+      213: -4335024478280780637
+    second: Land_4
   - first:
-      213: 4271780655302208723
-    second: SlimeJump_5
+      213: -2831162627266240911
+    second: Land_5
   - first:
-      213: 6116754092713097149
-    second: SlimeJump_6
+      213: -6209027019009437574
+    second: Land_6
   - first:
-      213: 4760488116922395201
-    second: SlimeJump_7
+      213: 653199427849552695
+    second: Land_7
   - first:
-      213: -7299356185989060789
-    second: SlimeJump_8
+      213: -6404473678224018860
+    second: Land_8
   - first:
-      213: 5137619143157061654
-    second: SlimeJump_9
+      213: -2151619390453254136
+    second: Land_9
   - first:
-      213: 2121689564443424230
-    second: SlimeJump_10
+      213: -2416483381613629226
+    second: Land_10
   - first:
-      213: -565547280096343059
-    second: SlimeJump_11
+      213: 7145971310318372855
+    second: Land_11
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -93,10 +93,11 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -108,7 +109,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -120,7 +121,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -132,7 +133,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -146,7 +147,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SlimeJump_0
+      name: Land_0
       rect:
         serializedVersion: 2
         x: 0
@@ -160,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5892a604223b4e60800000000000000
-      internalID: 7947501097736902746
+      spriteID: 6f70e2f5addd06930800000000000000
+      internalID: 4134548387895576566
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeJump_1
+      name: Land_1
       rect:
         serializedVersion: 2
         x: 1000
@@ -181,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9427db1e231766aa0800000000000000
-      internalID: -6168118176287722935
+      spriteID: 654254e1dc7067320800000000000000
+      internalID: 2555238416136873046
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeJump_2
+      name: Land_2
       rect:
         serializedVersion: 2
         x: 2000
@@ -202,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5eb86035925488560800000000000000
-      internalID: 7316173638452284389
+      spriteID: 1969b6c803a97c420800000000000000
+      internalID: 2650256439035795089
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeJump_3
+      name: Land_3
       rect:
         serializedVersion: 2
         x: 0
@@ -223,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a56b5f7cb3298c110800000000000000
-      internalID: 1281434879442400858
+      spriteID: a717d71d9c1e9f510800000000000000
+      internalID: 1583545000916775290
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeJump_4
+      name: Land_4
       rect:
         serializedVersion: 2
         x: 1000
@@ -244,14 +245,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6289f49492bf88220800000000000000
-      internalID: 2488514948864383014
+      spriteID: 3a473777436e6d3c0800000000000000
+      internalID: -4335024478280780637
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeJump_5
+      name: Land_5
       rect:
         serializedVersion: 2
         x: 2000
@@ -265,14 +266,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dc6ca58fd9684b30800000000000000
-      internalID: 4271780655302208723
+      spriteID: 17e1f643790b5b8d0800000000000000
+      internalID: -2831162627266240911
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeJump_6
+      name: Land_6
       rect:
         serializedVersion: 2
         x: 0
@@ -286,14 +287,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db7b49a707313e450800000000000000
-      internalID: 6116754092713097149
+      spriteID: a70d323b2da15d9a0800000000000000
+      internalID: -6209027019009437574
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeJump_7
+      name: Land_7
       rect:
         serializedVersion: 2
         x: 1000
@@ -307,14 +308,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14aa0ae58b6a01240800000000000000
-      internalID: 4760488116922395201
+      spriteID: 73306783b61a01900800000000000000
+      internalID: 653199427849552695
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeJump_8
+      name: Land_8
       rect:
         serializedVersion: 2
         x: 2000
@@ -328,14 +329,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b476215f83a73ba90800000000000000
-      internalID: -7299356185989060789
+      spriteID: 4523e1c3f1dbe17a0800000000000000
+      internalID: -6404473678224018860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeJump_9
+      name: Land_9
       rect:
         serializedVersion: 2
         x: 0
@@ -349,14 +350,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6189f13f36d7c4740800000000000000
-      internalID: 5137619143157061654
+      spriteID: 808f03c6099e322e0800000000000000
+      internalID: -2151619390453254136
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeJump_10
+      name: Land_10
       rect:
         serializedVersion: 2
         x: 1000
@@ -370,14 +371,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e5bd4cea61c17d10800000000000000
-      internalID: 2121689564443424230
+      spriteID: 6d0f841ea2de67ed0800000000000000
+      internalID: -2416483381613629226
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlimeJump_11
+      name: Land_11
       rect:
         serializedVersion: 2
         x: 2000
@@ -391,8 +392,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: deb4b22ceb5c628f0800000000000000
-      internalID: -565547280096343059
+      spriteID: 7f7c8a6bb079b2360800000000000000
+      internalID: 7145971310318372855
       vertices: []
       indices: 
       edges: []

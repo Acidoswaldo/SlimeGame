@@ -5,70 +5,161 @@ using UnityEngine;
 public class Player_Manager : MonoBehaviour
 {
 
-    [SerializeField] internal Player_Input player_Input;
-    [SerializeField] internal Player_Movment player_Movment;
-    [SerializeField] internal Player_animationcontroller player_Animationcontroller;
-     public enum PlayerState {Idle, Run, Attack, jump, fall, land, wall}
-    public PlayerState playerState;
+    Player_Input player_Input;
+    Player_Movement player_Movement;
+    Player_Animations player_Animations;
+    Player_Attack player_Attack;
+    Rigidbody2D myRigidbody2D;
+    BoxCollider2D myBoxCollider2D;
 
 
-    public Rigidbody2D rb2D;
-    public BoxCollider2D myBoxCollider;
-    public bool isGrounded;
+
+    public enum PlayerCharacterState { Idle, Run, Attack, jump, fall, land, wall, attack }
+    public PlayerCharacterState playerState;
 
 
-    private void Start()
+    private void Awake()
     {
-        myBoxCollider = GetComponent<BoxCollider2D>();
+        player_Input = gameObject.GetComponent<Player_Input>();
+        player_Movement = gameObject.GetComponent<Player_Movement>();
+        player_Animations = gameObject.GetComponent<Player_Animations>();
+        player_Attack = gameObject.GetComponent<Player_Attack>();
+        myRigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+        myBoxCollider2D = gameObject.GetComponent<BoxCollider2D>();
     }
+
+
     private void Update()
     {
-        CheckState();
+        if (!player_Attack.IsAttacking)
+        {
+            if ((player_Input.isLeftPressed || player_Input.isRightPressed) && player_Movement.IsGrounded)
+            {
+                playerState = PlayerCharacterState.Run;
+            }
+            else if (player_Movement.IsJumping && !player_Movement.IsGrounded && !player_Movement.IsOnWallLeft && !player_Movement.IsOnWallRight)
+            {
+                playerState = PlayerCharacterState.jump;
+            }
+            else if (!player_Movement.IsJumping && !player_Movement.IsGrounded && !player_Movement.IsLanding && !player_Movement.IsOnWallLeft && !player_Movement.IsOnWallRight)
+            {
+                playerState = PlayerCharacterState.fall;
+            }
+            else if (player_Movement.IsLanding && !player_Movement.IsJumping && player_Movement.IsGrounded)
+            {
+                playerState = PlayerCharacterState.land;
+            }
+            else if (!player_Movement.IsGrounded && (player_Movement.IsOnWallLeft || player_Movement.IsOnWallRight))
+            {
+                if (player_Movement.IsOnWallLeft && !player_Input.isRightPressed)
+                {
+                    playerState = PlayerCharacterState.wall;
+                }
+                if (player_Movement.IsOnWallRight && !player_Input.isLeftPressed)
+                {
+                    playerState = PlayerCharacterState.wall;
+                }
+
+            }
+            else
+            {
+                playerState = PlayerCharacterState.Idle;
+            }
+        }
+        else
+        {
+            if (player_Movement.IsOnWallRight)
+            {
+                if (player_Attack.AttackDirection == 1)
+                {
+                    playerState = PlayerCharacterState.Idle;
+                }
+                else
+                {
+                    playerState = PlayerCharacterState.attack;
+                }
+            }
+            else if (player_Movement.IsOnWallLeft)
+            {
+                if (player_Attack.AttackDirection == 2)
+                {
+                    playerState = PlayerCharacterState.Idle;
+                }
+                else
+                {
+                    playerState = PlayerCharacterState.attack;
+                }
+            }
+            else 
+            {
+              
+              playerState = PlayerCharacterState.attack;
+                
+            }
+
+
+        }
+        UpdateAnimations();
+
     }
 
-
-    public void CheckState()
+    void UpdateAnimations()
     {
-        if (player_Movment.isGrounded)
+        if (playerState == PlayerCharacterState.Idle)
         {
-            if (player_Input.isRightpressed || player_Input.isLeftpressed )
-            {
-                playerState = PlayerState.Run;
-                player_Animationcontroller.changeState(player_Animationcontroller.PLAYER_RUN, false, 0);
-            }
-            else if (!player_Input.isRightpressed && !player_Input.isLeftpressed && !player_Movment.isLanding)
-            {
-                playerState = PlayerState.Idle;
-                player_Animationcontroller.changeState(player_Animationcontroller.PLAYER_IDLE, false, 0);
-            }
-            else if (!player_Input.isRightpressed && !player_Input.isLeftpressed && player_Movment.isLanding)
-            {
-                playerState = PlayerState.land;
-                player_Animationcontroller.changeState(player_Animationcontroller.PLAYER_LAND, false, 0);
-
-            }
+            player_Animations.changeState(player_Animations.PLAYER_IDLE);
         }
-        else if (!player_Movment.isGrounded && player_Movment.isJumping && !player_Movment.WallLeft && !player_Movment.WallRight)
+        else if (playerState == PlayerCharacterState.Run)
         {
-            playerState = PlayerState.jump;
-            player_Animationcontroller.changeState(player_Animationcontroller.PLAYER_JUMP, false, 0 );
+            player_Animations.changeState(player_Animations.PLAYER_RUN);
         }
-        else if (!player_Movment.isGrounded && !player_Movment.isJumping && !player_Movment.isLanding && !player_Movment.WallLeft && !player_Movment.WallRight)
+        else if (playerState == PlayerCharacterState.jump)
         {
-            playerState = PlayerState.fall;
-            player_Animationcontroller.changeState(player_Animationcontroller.PLAYER_FALL, true, 0.2f);
+            player_Animations.changeState(player_Animations.PLAYER_JUMP);
         }
-        else if ((player_Movment.WallLeft || player_Movment.WallRight) && !player_Movment.isJumping)
+        else if (playerState == PlayerCharacterState.fall)
         {
-            playerState = PlayerState.wall;
-            player_Animationcontroller.changeState(player_Animationcontroller.PLAYER_WALL, false, 0);
-            
+            player_Animations.changeState(player_Animations.PLAYER_FALL);
+        }
+        else if (playerState == PlayerCharacterState.land)
+        {
+            player_Animations.changeState(player_Animations.PLAYER_LAND);
+        }
+        else if (playerState == PlayerCharacterState.wall)
+        {
+            player_Animations.changeState(player_Animations.PLAYER_WALL);
+        }
+        else if (playerState == PlayerCharacterState.attack)
+        {
+            player_Animations.changeState(player_Animations.PLAYER_GLATTTACK);
         }
 
-       
+    }
+    // Get Private Components
+
+    public Rigidbody2D getRigidbody2D()
+    {
+        return myRigidbody2D;
     }
 
+    public Player_Input getPlayer_Input()
+    {
+        return player_Input;
+    }
+    public Player_Movement getPlayer_Movement()
+    {
+        return player_Movement;
+    }
 
+    public Player_Attack getPlayer_Attack()
+    {
+        return player_Attack;
+    }
+
+    public BoxCollider2D getBoxCollider2D()
+    {
+        return myBoxCollider2D;
+    }
 
     
 }
